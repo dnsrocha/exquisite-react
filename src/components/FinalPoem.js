@@ -6,14 +6,10 @@ import { render } from '@testing-library/react';
 
 const FinalPoem = (props) => {
 
-  const recitePoem = (poem) => {
-    const renderedPoem = [];
-    poem.forEach((line, index) => {
-      renderedPoem.push(
-        <p key={index}>{line}</p>
-      )
+   const recitePoem = (poem) => {
+    return poem.map((line, index) => {
+      return <p key={index}>{line}</p>
     });
-    return renderedPoem;
   }
 
   if (props.isFinal){
