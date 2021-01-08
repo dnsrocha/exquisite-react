@@ -25,7 +25,7 @@ const Game = () => {
       } else {
         return field;
       }
-    }).join(" ");
+    }).join(' ');
   }
 
   const onFormSubmit = (formFields) => {

@@ -26,9 +26,9 @@ const PlayerSubmissionForm = (props) => {
 
   const inputClass = (input) => {
     if (input === ''){
-      return "PlayerSubmissionFormt__input--invalid";
+      return 'PlayerSubmissionFormt__input--invalid';
     } else {
-      return "PlayerSubmissionFormt__input--valid";
+      return 'PlayerSubmissionFormt__input--valid';
     }
   }
 
