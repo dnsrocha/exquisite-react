@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import './PlayerSubmissionForm.css';
 
 
@@ -14,10 +14,26 @@ const PlayerSubmissionForm = (props) => {
     noun2: '',
   };
 
-  const [formFields, setFormFields] = useState(emptyForm)
+  const [formFields, setFormFields] = useState(emptyForm)    //hook for formFields
 
   const onAdj1Change = (event) => {
-    console.log(`Adj1 Field Updated ${ event.target.value}`);
+    console.log(`Adj1 Field updated ${ event.target.value }`);
+    setFormFields({
+      ...formFields,
+      adj1: event.target.value,
+    });
+  };
+
+  const onAdj1Change = (event) => {
+    console.log(`Adj1 Field updated ${ event.target.value }`);
+    setFormFields({
+      ...formFields,
+      adj1: event.target.value,
+    });
+  };
+
+  const onNoun1Change = (event) => {
+    console.log(`Noun1 Field updated ${ event.target.value }`);
     setFormFields({
       ...formFields,
       noun1: event.target.value,
@@ -25,15 +41,23 @@ const PlayerSubmissionForm = (props) => {
   };
 
   const onAdvChange = (event) => {
-    console.log(`Adv Field updated ${event.target.value }`);
+    console.log(`Adv Field updated ${ event.target.value }`);
     setFormFields({
       ...formFields,
       adv: event.target.value,
     });
   };
 
+  const onVerbChange = (event) => {
+    console.log(`Verb Field updated ${ event.target.value }`);
+    setFormFields({
+      ...formFields,
+      verb: event.target.value,
+    });
+  };
+
   const onAdj2Change = (event) => {
-    console.log(`Adj2 Field updated ${event.target.value}`);
+    console.log(`Adj2 Field updated ${ event.target.value }`);
     setFormFields({
       ...formFields,
       adj2: event.target.value,
@@ -41,7 +65,7 @@ const PlayerSubmissionForm = (props) => {
   };
 
   const onNoun2Change = (event) => {
-    console.log(`Noun2 Field updateed ${event.target.value}`);
+    console.log(`Noun2 Field updated ${ event.target.value }`);
     setFormFields({
       ...formFields,
       noun2: event.target.value,
@@ -50,7 +74,7 @@ const PlayerSubmissionForm = (props) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(`Form submitted`);
+    console.log(`Form submitted`, formFields);
     props.onFormSubmit(formFields);
     setFormFields(emptyForm);
   }
@@ -58,13 +82,9 @@ const PlayerSubmissionForm = (props) => {
   return (
     <div className="PlayerSubmissionForm">
       <h3>Player Submission Form for Player #{props.player}</h3>
-
-      <form className="PlayerSubmissionForm__form" 
-        onSubmit={onSubmit}
-      >
+      <form className="PlayerSubmissionForm__form" onSubmit={onSubmit}></form>
 
         <div className="PlayerSubmissionForm__poem-inputs">
-
           {
             // Put your form inputs here... We've put in one below as an example
           }
