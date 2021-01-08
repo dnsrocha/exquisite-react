@@ -34,6 +34,8 @@ const FinalPoem = (props) => {
   }
 };
 
+//come back to this later for experiments
+
 FinalPoem.propTypes = {
   isSubmitted: PropTypes.bool.isRequired,
   submissions: PropTypes.arrayOf(PropTypes.string).isRequired,
