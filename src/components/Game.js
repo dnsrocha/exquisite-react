@@ -18,6 +18,10 @@ const Game = () => {
     }
   }).join(' ');
 
+  const formToLine = (form) => {
+    return (`The ${form.adj1} ${form.noun1} ${form.adv} ${form.verb} the ${form.adj2} ${form.noun2}`);
+  }
+
   const onFormSubmit = (line) => {
     console.log(`Form submitted`, line, poem, player)
     const updatePoem = Array.from(poem);
@@ -41,7 +45,7 @@ const Game = () => {
 
       <RecentSubmission />
 
-      <PlayerSubmissionForm />
+      <PlayerSubmissionForm field={FIELDS} player={player} isFinal={isFinal} onFormSubmit={onFormSubmit} />
 
       <FinalPoem />
 
