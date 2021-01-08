@@ -112,6 +112,7 @@ const PlayerSubmissionForm = (props) => {
             type="text" />
           </p>
 
+          {/* The adjective noun adverb verb the adjective noun. */}
         </div>
 
         <div className="PlayerSubmissionForm__submit">
@@ -120,18 +121,6 @@ const PlayerSubmissionForm = (props) => {
       </form>
     </div>
   );
-}
-
-PlayerSubmissionForm.propTypes = {
-  index: PropTypes.number.isRequired,
-  sendSubmission: PropTypes.func.isRequired,
-  fields: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      placeholder: PropTypes.string.isRequired,
-    }),
-  ])).isRequired,
 }
 
 export default PlayerSubmissionForm;

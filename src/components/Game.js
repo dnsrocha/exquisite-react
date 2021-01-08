@@ -5,6 +5,11 @@ import FinalPoem from './FinalPoem';
 import RecentSubmission from './RecentSubmission';
 
 const Game = () => {
+
+  const [player, setPlayer] = useState(1);
+  const [isFinal, setIsFinal] = useState(false);
+  const [poem, setPoem] = useState([]);
+
   const exampleFormat = FIELDS.map((field) => {
     if (field.key) {
       return field.placeholder;
@@ -12,6 +17,15 @@ const Game = () => {
       return field;
     }
   }).join(' ');
+
+  const onFormSubmit = (line) => {
+    console.log(`Form submitted`, line, poem, player)
+    const updatePoem = Array.from(poem);
+    updatedPoem.push(line);
+    setPoem(updatedPoem);
+    setPlayer(player + 1);
+    console.log(`Form submitted`, line poem, player)
+  }
 
   return (
     <div className="Game">
