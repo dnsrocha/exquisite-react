@@ -3,7 +3,39 @@ import PropTypes from 'prop-types';
 
 import './PlayerSubmissionForm.css';
 
-const PlayerSubmissionForm = () => {
+const PlayerSubmissionForm = (props) => {
+
+  const emptyForm = {
+    adj1:  '',
+    noun1: '',
+    adv:   '',
+    verb:  '',
+    adj2:  '',
+    noun2: '',
+  };
+
+  const [formFields, setFormFields] = useState(emptyForm)
+
+  const onAdj1Change = (event) => {
+    console.log(`Adj1 Field Updated ${ event.target.value}`);
+    setFormFields({
+      ...formFields,
+      noun1: event.target.value,
+    });
+  };
+
+  const onAdvChange = (event) => {
+    console.log(`Adv Field updated ${event.target.value }`);
+    setFormFields({
+      ...formFields,
+      adv: event.target.value,
+    });
+  };
+
+  const onAdj2Change = (event) => {
+    
+  }
+
   return (
     <div className="PlayerSubmissionForm">
       <h3>Player Submission Form for Player #{  }</h3>
